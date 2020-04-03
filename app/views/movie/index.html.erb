@@ -1,0 +1,5 @@
+<!-- @actorsの情報を１つずつ取り出して、actorという変数に代入-->
+<% @actors.each do |actor| %>
+<!--変数actorのnameを取り出すリンク、変数actorのidを取り出すmovie_pathを呼び出す-->
+  <p><%=link_to actor[:name] , movie_path(actor[:id]) %></p>
+<% end %>
