@@ -5,10 +5,10 @@ require 'uri'
 class MovieController < ApplicationController
 
   def index
-    #@actorにActorの全データのorderを取り出すメソッドを代入
+    #@actorにActorの全データをorderメソッド(昇順)で取り出すメソッドを代入
     # @actors = Actor.all.order
     #引数"清水"を受け取るメソッドを@actorsに代入
-    @actors = search_actors("清水")
+    @actors = search_actors("name.to_s")
   end
 
   def show
@@ -32,11 +32,13 @@ class MovieController < ApplicationController
     end
   end
   #引数idを受け取るメソッド
+  #引数に渡したidを持つactor情報(rubyオブジェクト)を返す
   def get_actor(id)
     #uriをurlに変換する
     url =  URI.encode("https://api.themoviedb.org/3/person/#{id}?api_key=118f2e5c4f9f1d17942a3271a18b5ea2")
-    #
+    #getで引数のurlにアクセスしてレスポンスを受け取る
     res = Net::HTTP.get(URI.parse(url))
+    #引数に渡されたjson形式のデータをrubyオブジェクトに変換
     JSON.parse(res)
   end  
 
