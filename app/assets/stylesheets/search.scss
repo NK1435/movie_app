@@ -1,3 +1,84 @@
-// Place all the styles related to the search controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+    background-color: black;
+    font-family: "Gill Sans", sans-serif;
+}
+
+// ----------header----------
+header{
+    background-color: black;
+    padding: auto;
+}
+.header-img{
+    padding: 250px 0px;
+    margin: auto;
+}
+
+// ----------main(index)----------
+.index_search{
+    position: relative;
+    text-align : center ;
+    color: white;
+    background-color: #343a40;
+    font-size: 20px;
+    padding: 5px 0px;
+    border-radius: 20px;
+    margin: 25px 100px;
+}
+.search_person{
+    padding-left: 100px;
+    padding-top: 10px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    float:left;
+}
+.search_movie{
+    padding-right: 100px;
+    padding-top: 10px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    float:right;
+}
+.index_search ul{
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+.index_search li{
+    display: inline;
+    margin: 0px auto;
+    padding: 0px 30px;
+}
+.img-text{
+   color: white; 
+}
+.index-list{
+    padding: 0px 20px;
+}
+// ----------main(show)----------
+.show-top{
+    text-align: center;
+    font-size: 30px;
+    color:white;
+    background-color: black;
+}
+.show-list{
+    padding: 0px 50px;
+    font-size: 25px;
+}
+.icon{
+    float: left;
+}
+.icon li{
+    display: inline;
+    margin-left: -50px;
+    list-style: none;
+}
+.list{
+    float: right;
+}
+.list li{
+    text-align: center;
+    display: inline;
+    list-style: none;
+}

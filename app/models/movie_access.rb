@@ -1,0 +1,2 @@
+class MovieAccess < ApplicationRecord
+end

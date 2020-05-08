@@ -1,0 +1,27 @@
+<body>
+  <header>
+    <div class="show-top">
+        <h1><%= @movie["title"]%></h1>
+    </div>
+  </header>
+  <main>
+    <div class="show-list">
+      <div class="icon">
+        <ul>
+            <% if @movie["poster_path"] == nil%>
+            <li><p>  </p></li>
+            <% else %>
+            <li><p><%= image_tag "https://image.tmdb.org/t/p/w500#{@movie["poster_path"]}" %></p></li>
+            <% end %>
+        </ul>
+      </div>
+      <div class="list">   
+        <ul>
+            <li><p>タイトル：<%= @movie["title"]%></p></li>
+            <li><p>公開日：<%= @movie["release_date"]%></p></li>
+            <li><p>タイトル：<%= @movie["title"]%></p></li>
+        </ul>
+      </div>     
+    </div>
+  </main> 
+</body>

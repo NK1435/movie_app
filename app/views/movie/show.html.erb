@@ -1,2 +1,27 @@
-<h1>Movie#show</h1>
-<p><%= @actor["name"]%></p>
+<body>
+  <header>
+    <div class="show-top">
+        <h1><%= @actor["name"]%></h1>
+    </div>
+  </header>
+  <main>
+    <div class="show-list">
+      <div class="icon">
+        <ul>
+            <% if @actor["profile_path"] == nil%>
+            <li><p>  </p></li>
+            <% else %>
+            <li><p><%= image_tag "https://image.tmdb.org/t/p/w500#{@actor["profile_path"]}" %></p></li>
+            <% end %>
+        </ul>
+      </div>
+      <div class="list">   
+        <ul>
+            <li><p>名前：<%= @actor["name"]%>(<%= @actor["birthday"] %>〜<%= @actor["deathday"] %>)</p></li>
+            <li><p>出身地：<%= @actor["place_of_birth"] %></p></li>
+            <li><p>部門：<%= @actor["known_for_department"] %></p></li>
+        </ul>
+      </div>     
+    </div>
+  </main> 
+</body>

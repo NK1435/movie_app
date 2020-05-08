@@ -1,0 +1,18 @@
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  <main>
+    <div class="index-list">
+      <% @movies.each do |movie| %>
+      <!--変数actorのnameを取り出すリンク、変数actorのidを取り出すmovie_pathを呼び出す-->
+        <ul>
+          <li><%= link_to movie[:title] , search_path(movie[:id]) %></li>
+        </ul>  
+      <% end %>
+    </div>
+  </main>
+  
+</body>

@@ -1,11 +1,30 @@
-<p>検索</p>
-<%= form_with(url: movie_index_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag 'Search', :name => nil %>
-<% end %>
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
 
- <!--@actorsの情報を１つずつ取り出して、actorという変数に代入-->
-<% @actors.each do |actor| %>
-<!--変数actorのnameを取り出すリンク、変数actorのidを取り出すmovie_pathを呼び出す-->
-  <p><%= link_to actor[:name] , movie_path(actor[:id]) %></p>
-<% end %>
+<body>
+  <main>
+    <div class="index-list">
+      <% @actors.each do |actor| %>
+      <!--変数actorのnameを取り出すリンク、変数actorのidを取り出すmovie_pathを呼び出す-->
+        <ul>
+          <li><%= link_to actor[:name] , movie_path(actor[:id]) %></li>
+        </ul>  
+      <% end %>
+    </div>
+    <div class="trend-search">
+      <div class="trend-1">
+        <h2>検索トレンド（作品）</h2>
+        <% @ranking_sort.each do |rank| %>
+          <ul>
+            <% p rank %>
+            <li><i class="fas fa-video"><%= link_to rank[:title], movie_index_path(rank[:id]) %></i></li>
+            <li><i class="fas fa-video"><%= link_to rank[:title], movie_index_path(rank[:id]) %></i></li>
+            <li><i class="fas fa-video"><%= link_to rank[:title], movie_index_path(rank[:id]) %></i></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </main>
+  
+</body>
