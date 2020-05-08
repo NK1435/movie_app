@@ -15,6 +15,11 @@
     <div class="trend-search">
       <div class="trend-1">
         <h2>検索トレンド（作品）</h2>
+        <% @ranking_result.each do |rank| %>
+          <ul>
+            <li><%= link_to rank[:title], movie_index_path(rank[:id]) %></li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </main>

@@ -70,16 +70,12 @@ header{
 }
 .trend-1 ul{
     text-align: center;
+    list-style: none;
     margin: 0px 70px;
-    border-top: solid 5px #5989cf;
-    border-bottom: solid 5px #5989cf;
 }
 .trend-1 li{
-    background-color: blue;
     text-align: center;
-    display: inline-block;
-    margin: 10px 50px 10px 0;
-    padding: 100px auto;
+    display: inline;
 }
     
 // ----------main(show)----------
