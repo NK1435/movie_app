@@ -5,6 +5,10 @@ require 'uri'
 class SearchController < ApplicationController
     def index
         @movies = search_movies(params[:search])
+        #映画アクセスランキングデータの準備
+        @ranking = MovieAccess.all
+        @ranking = MovieAccess.group(:id)
+        @ranking = MovieAccess.sort {|a,b| a[1] <=> b[1]}.reverse.map{|s| s[0]}.take(3)
     end
     
     def show

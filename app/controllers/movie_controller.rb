@@ -14,7 +14,6 @@ class MovieController < ApplicationController
     @ranking = MovieAccess.all
     @ranking = MovieAccess.group(:movie_id).count
     @ranking_sort = @ranking.sort {|a,b| a[1] <=> b[1]}.reverse.map{|s| s[0]}.take(3)
-    @movie_access.find_by(movie_id)
   end
   
   def show
